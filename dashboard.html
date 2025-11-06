@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Gestion Hôtel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <a href="home.html" class="text-gray-600 hover:text-gray-800">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </a>
+                    <h1 class="text-2xl font-bold text-gray-800">Dashboard</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-600">Manager</span>
+                    <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold">
+                        MG
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-8">
+        <!-- Statistics Cards - Focus Revenus -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <!-- Revenus Aujourd'hui -->
+            <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-green-500">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600 mb-1">Revenus Aujourd'hui</p>
+                        <p class="text-3xl font-bold text-green-700">42,750 FC</p>
+                        <p class="text-xs text-gray-600 mt-1">8 réservations actives</p>
+                    </div>
+                    <div class="bg-green-100 p-4 rounded-full">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Revenus Cette Semaine -->
+            <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600 mb-1">Revenus Cette Semaine</p>
+                        <p class="text-3xl font-bold text-blue-700">285,600 FC</p>
+                        <p class="text-xs text-gray-600 mt-1">52 réservations</p>
+                    </div>
+                    <div class="bg-blue-100 p-4 rounded-full">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Revenus Ce Mois -->
+            <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-yellow-500">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600 mb-1">Revenus Ce Mois</p>
+                        <p class="text-3xl font-bold text-yellow-700">1,247,500 FC</p>
+                        <p class="text-xs text-gray-600 mt-1">127 réservations</p>
+                    </div>
+                    <div class="bg-yellow-100 p-4 rounded-full">
+                        <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts & Recent Activities -->
+        <div class="mb-8">
+            <!-- État d'Occupation Actuel -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">État d'Occupation Actuel par Niveau</h3>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <div>
+                                <span class="text-gray-800 font-semibold text-lg">Niveau 1</span>
+                                <span class="text-gray-500 text-sm ml-2">(15 chambres)</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-2xl font-bold text-red-600">12</span>
+                                <span class="text-gray-500 mx-1">/</span>
+                                <span class="text-2xl font-bold text-green-600">3</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-1">
+                            <div class="flex-1 bg-red-500 h-10 rounded flex items-center justify-center text-white text-sm font-semibold" style="flex: 12">
+                                Occupées: 12
+                            </div>
+                            <div class="flex-1 bg-green-500 h-10 rounded flex items-center justify-center text-white text-sm font-semibold" style="flex: 3">
+                                Libres: 3
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <div>
+                                <span class="text-gray-800 font-semibold text-lg">Niveau 2</span>
+                                <span class="text-gray-500 text-sm ml-2">(15 chambres)</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-2xl font-bold text-red-600">11</span>
+                                <span class="text-gray-500 mx-1">/</span>
+                                <span class="text-2xl font-bold text-green-600">4</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-1">
+                            <div class="flex-1 bg-red-500 h-10 rounded flex items-center justify-center text-white text-sm font-semibold" style="flex: 11">
+                                Occupées: 11
+                            </div>
+                            <div class="flex-1 bg-green-500 h-10 rounded flex items-center justify-center text-white text-sm font-semibold" style="flex: 4">
+                                Libres: 4
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <div>
+                                <span class="text-gray-800 font-semibold text-lg">Niveau 3</span>
+                                <span class="text-gray-500 text-sm ml-2">(15 chambres)</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-2xl font-bold text-red-600">13</span>
+                                <span class="text-gray-500 mx-1">/</span>
+                                <span class="text-2xl font-bold text-green-600">2</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-1">
+                            <div class="flex-1 bg-red-500 h-10 rounded flex items-center justify-center text-white text-sm font-semibold" style="flex: 13">
+                                Occupées: 13
+                            </div>
+                            <div class="flex-1 bg-green-500 h-10 rounded flex items-center justify-center text-white text-sm font-semibold" style="flex: 2">
+                                Libres: 2
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <div>
+                                <span class="text-gray-800 font-semibold text-lg">Niveau 4</span>
+                                <span class="text-gray-500 text-sm ml-2">(15 chambres)</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-2xl font-bold text-red-600">9</span>
+                                <span class="text-gray-500 mx-1">/</span>
+                                <span class="text-2xl font-bold text-green-600">6</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-1">
+                            <div class="flex-1 bg-red-500 h-10 rounded flex items-center justify-center text-white text-sm font-semibold" style="flex: 9">
+                                Occupées: 9
+                            </div>
+                            <div class="flex-1 bg-green-500 h-10 rounded flex items-center justify-center text-white text-sm font-semibold" style="flex: 6">
+                                Libres: 6
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700 font-semibold">TOTAL (60 chambres)</span>
+                            <div>
+                                <span class="text-3xl font-bold text-red-600">45</span>
+                                <span class="text-gray-500 mx-2">/</span>
+                                <span class="text-3xl font-bold text-green-600">15</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Journal des Activités Complet -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-bold text-gray-800">Journal des Activités</h3>
+                    <span class="text-sm text-gray-500">245 entrées</span>
+                </div>
+                
+                <div class="space-y-3">
+                    <!-- Entry 1 -->
+                    <div class="flex items-start space-x-3 pb-3 border-b hover:bg-gray-50 p-2 rounded transition">
+                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-semibold text-gray-800">Nouvelle réservation</p>
+                            <p class="text-xs text-gray-600">Chambre 305 - Jean Kabongo - RES-1258</p>
+                            <p class="text-xs text-gray-500 mt-1">03 Nov 2025, 14:25</p>
+                        </div>
+                    </div>
+
+                    <!-- Entry 2 -->
+                    <div class="flex items-start space-x-3 pb-3 border-b hover:bg-gray-50 p-2 rounded transition">
+                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-semibold text-gray-800">Paiement reçu</p>
+                            <p class="text-xs text-gray-600">15,000 FC - Réservation RES-1247</p>
+                            <p class="text-xs text-gray-500 mt-1">03 Nov 2025, 14:10</p>
+                        </div>
+                    </div>
+
+                    <!-- Entry 3 -->
+                    <div class="flex items-start space-x-3 pb-3 border-b hover:bg-gray-50 p-2 rounded transition">
+                        <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-semibold text-gray-800">Échange de chambre</p>
+                            <p class="text-xs text-gray-600">Chambre 202 → Chambre 301 - Marie Tshala</p>
+                            <p class="text-xs text-gray-500 mt-1">03 Nov 2025, 13:53</p>
+                        </div>
+                    </div>
+
+                    <!-- Entry 4 -->
+                    <div class="flex items-start space-x-3 pb-3 border-b hover:bg-gray-50 p-2 rounded transition">
+                        <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-semibold text-gray-800">Check-out effectué</p>
+                            <p class="text-xs text-gray-600">Chambre 105 - Paul Mbuyi - RES-1243</p>
+                            <p class="text-xs text-gray-500 mt-1">03 Nov 2025, 13:25</p>
+                        </div>
+                    </div>
+
+                    <!-- Entry 5 -->
+                    <div class="flex items-start space-x-3 pb-3 border-b hover:bg-gray-50 p-2 rounded transition">
+                        <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-semibold text-gray-800">Check-in effectué</p>
+                            <p class="text-xs text-gray-600">Chambre 402 - Sandra Mukuna - RES-1255</p>
+                            <p class="text-xs text-gray-500 mt-1">03 Nov 2025, 12:45</p>
+                        </div>
+                    </div>
+
+                    <!-- Entry 6 -->
+                    <div class="flex items-start space-x-3 pb-3 border-b hover:bg-gray-50 p-2 rounded transition">
+                        <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-semibold text-gray-800">Réservation annulée</p>
+                            <p class="text-xs text-gray-600">Chambre 401 - Joseph Kalala - RES-1251</p>
+                            <p class="text-xs text-gray-500 mt-1">03 Nov 2025, 12:15</p>
+                        </div>
+                    </div>
+
+                    <!-- Entry 7 -->
+                    <div class="flex items-start space-x-3 pb-3 border-b hover:bg-gray-50 p-2 rounded transition">
+                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-semibold text-gray-800">Paiement reçu</p>
+                            <p class="text-xs text-gray-600">25,000 FC - Réservation RES-1253</p>
+                            <p class="text-xs text-gray-500 mt-1">03 Nov 2025, 11:30</p>
+                        </div>
+                    </div>
+
+                    <!-- Entry 8 -->
+                    <div class="flex items-start space-x-3 pb-3 border-b hover:bg-gray-50 p-2 rounded transition">
+                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-semibold text-gray-800">Nouvelle réservation</p>
+                            <p class="text-xs text-gray-600">Chambre 205 - Lucie Nkongolo - RES-1257</p>
+                            <p class="text-xs text-gray-500 mt-1">03 Nov 2025, 10:55</p>
+                        </div>
+                    </div>
+
+                    <!-- Entry 9 -->
+                    <div class="flex items-start space-x-3 pb-3 border-b hover:bg-gray-50 p-2 rounded transition">
+                        <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-semibold text-gray-800">Service additionnel</p>
+                            <p class="text-xs text-gray-600">Petit déjeuner - Chambre 302 - 5,000 FC</p>
+                            <p class="text-xs text-gray-500 mt-1">03 Nov 2025, 09:20</p>
+                        </div>
+                    </div>
+
+                    <!-- Entry 10 -->
+                    <div class="flex items-start space-x-3 pb-3 hover:bg-gray-50 p-2 rounded transition">
+                        <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-semibold text-gray-800">Check-out effectué</p>
+                            <p class="text-xs text-gray-600">Chambre 208 - Daniel Ilunga - RES-1245</p>
+                            <p class="text-xs text-gray-500 mt-1">03 Nov 2025, 08:45</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="mt-6 flex items-center justify-between border-t pt-4">
+                    <div class="text-sm text-gray-600">
+                        Affichage de <span class="font-semibold">1-10</span> sur <span class="font-semibold">245</span> entrées
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-100 text-gray-400 cursor-not-allowed" disabled>
+                            Précédent
+                        </button>
+                        <button class="px-3 py-1 text-sm bg-blue-600 text-white rounded font-semibold">1</button>
+                        <button class="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-100">2</button>
+                        <button class="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-100">3</button>
+                        <button class="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-100">4</button>
+                        <button class="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-100">5</button>
+                        <span class="px-3 py-1 text-sm text-gray-500">...</span>
+                        <button class="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-100">25</button>
+                        <button class="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-100 text-blue-600">
+                            Suivant
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
